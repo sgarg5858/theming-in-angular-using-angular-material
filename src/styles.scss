@@ -14,3 +14,27 @@
 //even if you define multiple themes.
 //Including the core mixin multiple times will result in duplicate CSS in your application.
 @include mat.core();
+
+
+//Step2 => defining Theme
+// Constructing the theme first requires defining your primary and accent palettes, 
+// with an optional warn palette. 
+//The define-palette Sass function accepts a color palette, 
+
+$my-primary: mat.define-palette(mat.$indigo-palette, 500);
+$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$my-warn: mat.define-palette(mat.$red-palette);
+
+//You can construct a theme by calling either define-light-theme or define-dark-theme 
+//with the result from define-palette. The choice of a light versus a dark theme 
+//determines the background and foreground colors used throughout the components.
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn,
+ )
+));
