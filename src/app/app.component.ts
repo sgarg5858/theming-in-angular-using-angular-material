@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'theming-in-angular-using-angular-material';
+  constructor(public themeService:ThemeService)
+  {
+    this.themeService.isDarkTheme$.subscribe((value:boolean)=>{
+      console.log(value);
+    })
+  }
 }

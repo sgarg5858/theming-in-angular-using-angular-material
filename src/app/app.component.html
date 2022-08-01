@@ -1,4 +1,9 @@
-<div class="container mat-app-background my-dark-theme">
+<div 
+[ngClass]="{'my-dark-theme':themeService.isDarkTheme$ | async}"
+class="container mat-app-background"
+>
+  <app-nav></app-nav>
+
   <button mat-raised-button color="primary">
     Primary Button
   </button>

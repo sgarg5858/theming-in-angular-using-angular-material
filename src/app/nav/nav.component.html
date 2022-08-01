@@ -1,1 +1,16 @@
-<p>nav works!</p>
+<nav class="navigation">
+    <ng-container *ngIf="(themeService.isDarkTheme$ | async);else lightTheme">
+        <mat-icon 
+        class="yellow"
+        (click)="changeTheme(false)"
+        >
+            sunny_wb
+        </mat-icon>
+    </ng-container> 
+    <ng-template #lightTheme>
+        <mat-icon class="blue" (click)="changeTheme(true)">
+            brightness_2
+        </mat-icon>
+    </ng-template>
+    
+</nav>

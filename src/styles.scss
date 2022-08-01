@@ -57,12 +57,12 @@ $dark-theme: mat.define-dark-theme((
    warn:$dark-warn
  )
 ));
+@include mat.all-component-themes($light-theme);
+$border-color:'black';
 
 .my-dark-theme{
   @include mat.all-component-themes($dark-theme);
-}
-.my-light-theme{
-  @include mat.all-component-themes($light-theme);
+  $border-color:'white';
 }
 
 html, body { height: 100%; }
