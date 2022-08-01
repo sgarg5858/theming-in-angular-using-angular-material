@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+// A theme is a collection of 3 palettes primary,accent,warn
+// A pallete represnts a color portion and is represented as Sass Map
+// a pallete has hues with identifiers 
+// 50,100 ,200,300,400,500,600,700,800,900
+//& nested sass map named constrast with same identifiers
+//basically constrast is used as color when that hue is used as background
+
+
+//Step1  
+@use '@angular/material' as mat;
+//Include the core mixin only once & this contains prerequisite styles
+// for many features such as ripples
+//The core mixin must be included exactly once for your application, 
+//even if you define multiple themes.
+//Including the core mixin multiple times will result in duplicate CSS in your application.
+@include mat.core();
