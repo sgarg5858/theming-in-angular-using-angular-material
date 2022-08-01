@@ -38,3 +38,5 @@ $my-theme: mat.define-light-theme((
    warn: $my-warn,
  )
 ));
+
+@include mat.all-component-themes($my-theme);
