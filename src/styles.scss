@@ -31,7 +31,7 @@ $my-warn: mat.define-palette(mat.$red-palette);
 //with the result from define-palette. The choice of a light versus a dark theme 
 //determines the background and foreground colors used throughout the components.
 
-$my-theme: mat.define-light-theme((
+$my-light-theme: mat.define-light-theme((
  color: (
    primary: $my-primary,
    accent: $my-accent,
@@ -39,4 +39,21 @@ $my-theme: mat.define-light-theme((
  )
 ));
 
-@include mat.all-component-themes($my-theme);
+//These mixins behave the same as individual component mixins, 
+//except they emit styles for core-theme and all 35+ components in Angular Material. 
+//Unless your application uses every single component, this will produce unnecessary CSS.
+@include mat.all-component-themes($my-light-theme);
+
+
+//Step-4  Lets define Dark Theme
+
+$dark-primary: mat.define-palette(mat.$pink-palette);
+$dark-accent: mat.define-palette(mat.$blue-grey-palette);
+$dark-warn: mat.define-palette(mat.$red-palette);
+$dark-theme: mat.define-dark-theme((
+ color: (
+   primary: $dark-primary,
+   accent: $dark-accent,
+   warn:$dark-warn
+ )
+));
